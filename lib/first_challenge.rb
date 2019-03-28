@@ -1,8 +1,9 @@
+#require 'pry'
 def first_challenge
   contacts = {
     "Jon Snow" => {
       name: "Jon",
-      email: "jon_snow@thewall.we", 
+      email: "jon_snow@thewall.we",
       favorite_icecream_flavors: ["chocolate", "vanilla", "mint chip"],
       knows: nil
     },
@@ -14,9 +15,19 @@ def first_challenge
   }
 
   #your code here
+#.delete if
+#call the enumerator in contacts["Freddy Mercury"]
+  contacts["Freddy Mercury"].each { |attribute, value|
+    if attribute == :favorite_icecream_flavors
+      value.delete_if {|flavor|
+        flavor == "strawberry"
+      }
+          print "here I am"
+        #  binding.pry
+    end
+      }
 
 
   #remember to return your newly altered contacts hash!
   contacts
 end
-
